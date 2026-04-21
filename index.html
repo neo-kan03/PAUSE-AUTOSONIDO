@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Pause Autosonido - Electrónica Automotriz Premium</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#d8e2ff",
+                        "on-background": "#e5e2e3",
+                        "surface": "#131314",
+                        "on-surface-variant": "#c1c6d7",
+                        "on-secondary-container": "#b4b4bc",
+                        "inverse-surface": "#e5e2e3",
+                        "on-tertiary": "#303033",
+                        "error-container": "#93000a",
+                        "on-primary-fixed": "#001a41",
+                        "tertiary-container": "#929094",
+                        "surface-container-high": "#2a2a2b",
+                        "secondary": "#c6c6ce",
+                        "on-surface": "#e5e2e3",
+                        "on-primary": "#002e69",
+                        "tertiary-fixed-dim": "#c8c6ca",
+                        "on-secondary-fixed": "#1a1b21",
+                        "surface-bright": "#39393a",
+                        "secondary-container": "#45464d",
+                        "on-error": "#690005",
+                        "secondary-fixed-dim": "#c6c6ce",
+                        "on-primary-fixed-variant": "#004493",
+                        "secondary-fixed": "#e2e2ea",
+                        "on-tertiary-fixed-variant": "#47464a",
+                        "surface-tint": "#adc6ff",
+                        "on-primary-container": "#00285c",
+                        "error": "#ffb4ab",
+                        "surface-container-low": "#1c1b1c",
+                        "on-tertiary-container": "#2a292c",
+                        "on-secondary-fixed-variant": "#45464d",
+                        "surface-container": "#201f20",
+                        "surface-variant": "#353436",
+                        "surface-dim": "#131314",
+                        "outline": "#8b90a0",
+                        "tertiary": "#c8c6ca",
+                        "tertiary-fixed": "#e4e1e5",
+                        "primary": "#adc6ff",
+                        "background": "#131314",
+                        "inverse-primary": "#005bc1",
+                        "surface-container-lowest": "#0e0e0f",
+                        "inverse-on-surface": "#313031",
+                        "primary-fixed-dim": "#adc6ff",
+                        "on-tertiary-fixed": "#1b1b1e",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-highest": "#353436",
+                        "outline-variant": "#414755",
+                        "on-secondary": "#2f3036",
+                        "primary-container": "#4b8eff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-lg": "32px",
+                        "stack-sm": "8px",
+                        "stack-md": "16px",
+                        "gutter": "24px",
+                        "margin": "40px",
+                        "unit": "4px",
+                        "max-width": "1440px"
+                    },
+                    "fontFamily": {
+                        "data-mono": ["Space Grotesk"],
+                        "display-lg": ["Space Grotesk"],
+                        "headline-md": ["Space Grotesk"],
+                        "headline-sm": ["Space Grotesk"],
+                        "label-caps": ["Space Grotesk"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "data-mono": ["14px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-sm": ["24px", { "lineHeight": "1.3", "fontWeight": "500" }],
+                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-panel {
+            background: rgba(26, 26, 29, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(192, 192, 200, 0.1);
+        }
+
+        .tech-border {
+            position: relative;
+        }
+
+        .tech-border::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 1px solid rgba(192, 192, 200, 0.2);
+            pointer-events: none;
+        }
+
+        .tech-border:hover::before {
+            border-color: rgba(173, 198, 255, 0.5);
+            box-shadow: 0 0 10px rgba(173, 198, 255, 0.1) inset;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background text-on-background min-h-screen flex flex-col font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
+    <!-- TopNavBar -->
+    <header class="fixed top-0 w-full border-b border-slate-800/50 z-50 bg-slate-950/90 backdrop-blur-md">
+        <div class="flex justify-between items-center w-full px-4 md:px-6 py-4 max-w-7xl mx-auto border-b border-slate-800/30">
+            <div
+                class="text-xl md:text-2xl font-bold text-slate-100 tracking-tighter italic font-['Space_Grotesk'] tracking-tight">
+                <a href="#">Pause Autosonido</a>
+            </div>
+            <a href="tel:968304629"
+                class="font-label-caps text-[11px] md:text-label-caps bg-primary text-on-primary px-4 py-2 md:px-6 md:py-3 rounded flex items-center gap-2 hover:bg-primary-fixed transition-colors">
+                <span class="material-symbols-outlined !text-[14px] md:!text-[16px]">phone</span>
+                LLAMAR AHORA
+            </a>
+        </div>
+    </header>
+    <main class="flex-grow pt-[80px]">
+        <!-- Hero Section -->
+        <section
+            class="relative min-h-[100vh] flex items-center border-b border-surface-container-highest overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <div class="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-transparent z-10">
+                </div>
+                <img alt="Car interior" class="w-full h-full object-cover opacity-60"
+                    data-alt="Modern high-tech luxury car interior dashboard at night with glowing blue ambient light and large central touchscreen interface"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuC55wHe1vVeRB0RzBB5uvUwrQgavU2ZLr-u_YxgaMggK8bCqkKB5jbrfuCrlftaQSDeMyWqMCcWEA5ctxKwUF2YAamKXsKTc_vUYtrTE7Pvmx6eQ88znR-Rvkp4vdC21NJmFiE6sCOsZo_74IsQLapPbtdUXJf-dw6CIAgxOJWZ-bETFObKLrOPaGC6O_P2b-0JSoYLmURGMrGMNa-M-02XjYEkI9oNsRKaPLyjg5Jeig_YQ5JL2JNU_LzBp4JY5ZBip9I6_0AbdLg">
+            </div>
+            <div class="relative z-10 max-w-7xl mx-auto px-margin w-full">
+                <div class="max-w-2xl space-y-stack-lg">
+                    <div class="space-y-stack-md">
+                        <h1 class="font-display-lg text-display-lg text-inverse-surface">
+                            Sonido Premium, Confort y Seguridad para tu Vehículo
+                        </h1>
+                        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                            Integración avanzada de electrónica automotriz diseñada para la precisión y el rendimiento.
+                            Transformamos la cabina en un entorno acústico perfecto.
+                        </p>
+                    </div>
+                    <a href="#servicios"
+                        class="font-label-caps max-w-[200px] text-label-caps bg-transparent border border-secondary text-inverse-surface px-8 py-4 hover:border-primary hover:text-primary transition-colors flex items-center gap-2 group">
+                        VER SERVICIOS
+                        <span
+                            class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+            <!-- Tech Accents -->
+            <div
+                class="absolute bottom-0 right-0 p-8 glass-panel border-r-0 border-b-0 flex gap-12 font-data-mono text-data-mono text-outline">
+                <div>
+                    <div class="text-primary mb-1"><br></div>
+                    <div class=""><br></div>
+                </div>
+                <div>
+                    <div class="text-primary mb-1"><br></div>
+                    <div class=""><br></div>
+                </div>
+            </div>
+        </section>
+        <!-- Specializations (Bento Grid) -->
+        <section id="servicios" class="py-24 bg-surface-dim min-h-screen flex items-center justify-center">
+            <div class="max-w-7xl w-full mx-auto px-margin space-y-stack-lg">
+                <h2 class="font-headline-md text-headline-md text-inverse-surface border-l-4 border-primary pl-4">
+                    Especialidades Técnicas
+                </h2>
+                <div class="grid place-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+                    <!-- Audio -->
+                    <div
+                        class="bg-surface-container-low p-6 rounded-none tech-border transition-all duration-300 hover:bg-surface-container flex flex-col gap-stack-md h-full">
+                        <div
+                            class="h-12 w-12 rounded-full border border-outline/30 flex items-center justify-center text-primary bg-surface">
+                            <span class="material-symbols-outlined"
+                                style="font-variation-settings: &quot;FILL&quot; 0;">speaker</span>
+                        </div>
+                        <h3 class="font-headline-sm text-headline-sm text-on-surface">CAR-AUDIO</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant flex-grow">
+                            Sonido de alta fidelidad e integración DSP premium para una acústica de grado audiófilo.
+                        </p>
+                    </div>
+                    <!-- Multimedia -->
+                    <div
+                        class="bg-surface-container-low p-6 rounded-none tech-border transition-all duration-300 hover:bg-surface-container flex flex-col gap-stack-md h-full">
+                        <div
+                            class="h-12 w-12 rounded-full border border-outline/30 flex items-center justify-center text-primary bg-surface">
+                            <span class="material-symbols-outlined"
+                                style="font-variation-settings: &quot;FILL&quot; 0;">tablet_mac</span>
+                        </div>
+                        <h3 class="font-headline-sm text-headline-sm text-on-surface">MULTIMEDIA</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant flex-grow">
+                            Pantallas táctiles de alta resolución, integración total con Apple CarPlay y Android Auto.
+                        </p>
+                    </div>
+                    <!-- Radar -->
+                    <div
+                        class="bg-surface-container-low p-6 rounded-none tech-border transition-all duration-300 hover:bg-surface-container flex flex-col gap-stack-md h-full">
+                        <div
+                            class="h-12 w-12 rounded-full border border-outline/30 flex items-center justify-center text-primary bg-surface">
+                            <span class="material-symbols-outlined"
+                                style="font-variation-settings: &quot;FILL&quot; 0;">radar</span>
+                        </div>
+                        <h3 class="font-headline-sm text-headline-sm text-on-surface">AVISADORES DE RADAR</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant flex-grow">
+                            Sistemas de detección y localización discretos, integrados sin alterar la estética original.
+                        </p>
+                    </div>
+                    <!-- Security -->
+                    <div
+                        class="bg-surface-container-low p-6 rounded-none tech-border transition-all duration-300 hover:bg-surface-container flex flex-col gap-stack-md h-full">
+                        <div
+                            class="h-12 w-12 rounded-full border border-outline/30 flex items-center justify-center text-primary bg-surface">
+                            <span class="material-symbols-outlined"
+                                style="font-variation-settings: &quot;FILL&quot; 0;">security</span>
+                        </div>
+                        <h3 class="font-headline-sm text-headline-sm text-on-surface">SEGURIDAD Y CONFORT</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant flex-grow">
+                            Alarmas de última generación, sensores de parking milimétricos y localizadores GPS
+                            avanzados.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Local Section -->
+        <section class="py-24 bg-surface border-y border-surface-container-highest relative overflow-hidden">
+            <!-- Background subtle pattern -->
+            <div class="absolute inset-0 opacity-[0.03] pointer-events-none"
+                style="background-image: radial-gradient(#adc6ff 1px, transparent 1px); background-size: 32px 32px;">
+            </div>
+            <div class="max-w-7xl mx-auto px-margin relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-stack-lg">
+                    <div class="space-y-stack-sm">
+                        <div class="font-data-mono text-data-mono text-outline uppercase tracking-widest">
+                            Ubicación y Prestigio</div>
+                        <h2 class="font-headline-md text-headline-md text-inverse-surface">Tu confianza en
+                            Puente Tocinos</h2>
+                    </div>
+                    <p class="font-body-lg text-body-lg text-on-surface-variant">
+                        Somos el destino referente en Murcia para instalaciones electrónicas de alta gama. Nuestro
+                        taller clínico asegura que cada intervención sea impecable y respetuosa con los sistemas
+                        originales del vehículo.
+                    </p>
+                    <div class="flex items-center gap-6 pt-4">
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-yellow-500"
+                                style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+                            <span class="font-headline-sm text-headline-sm text-inverse-surface">4.7
+                                Estrellas</span>
+                        </div>
+                        <div class="h-8 w-px bg-surface-container-highest"></div>
+                        <div class="font-body-md text-body-md text-outline">
+                            Más de 150 reseñas reales
+                        </div>
+                    </div>
+                </div>
+                <!-- Map UI Element -->
+                <div class="glass-panel p-2 tech-border aspect-video lg:aspect-square">
+                    <img alt="Mapa Murcia"
+                        class="w-full h-full object-cover grayscale opacity-70 border border-surface-container-highest mix-blend-luminosity"
+                        data-alt="Stylized dark mode satellite map view of a city grid with high contrast streets and subtle blue accent markers"
+                        data-location="Murcia"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEamNI1zPwaUN5krjEBc3Rk7TmirtxNPIti8-yK2L_SearL1PNg9E1aodTnNGKfD_CWy5z7w-A9fD-YGapIGzkX9eMgA7m5NVVn4akNendANW7tljGBTmMhk-maX1fNNkOc100LoCQ2VTCvZEtU0_Ct_n2Jl-NRDszLvJ2QmkmUA7pbtLOMcFckLpJzCEN0Mb2-IGkjRiPDu3ryC9bQXCVWp1hA_eT4fNo-4QrsXnLEKG2XcdkQ10VV9EGMlpyGLW7Hm0H0IvQGHs">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div
+                            class="h-16 w-16 rounded-full bg-primary/20 border border-primary flex items-center justify-center animate-pulse">
+                            <span class="material-symbols-outlined text-primary">location_on</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="w-full border-t border-slate-800 py-12 bg-slate-950 mt-auto">
+        <div class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex flex-col gap-2">
+                <div class="text-lg font-black text-slate-200 font-['Space_Grotesk'] text-sm uppercase tracking-widest">
+                    Pause Autosonido
+                </div>
+                <div class="text-sm text-slate-500 font-body-md">
+                    Calle Mayor, Puente Tocinos, Murcia
+                </div>
+                <div class="text-xs text-slate-600 mt-4">
+                    © 2024 Pause Autosonido. Excelencia en Electrónica Automotriz.
+                </div>
+            </div>
+            <div class="flex flex-wrap gap-6 justify-center">
+                <a class="font-['Space_Grotesk'] text-sm uppercase tracking-widest text-slate-500 hover:text-slate-100 opacity-80 hover:opacity-100 transition-opacity"
+                    href="#">Aviso Legal</a>
+                <a class="font-['Space_Grotesk'] text-sm uppercase tracking-widest text-slate-500 hover:text-slate-100 opacity-80 hover:opacity-100 transition-opacity"
+                    href="#">Privacidad</a>
+                <a class="font-['Space_Grotesk'] text-sm uppercase tracking-widest text-slate-500 hover:text-slate-100 opacity-80 hover:opacity-100 transition-opacity"
+                    href="#">Cookies</a>
+            </div>
+            <div class="text-xs text-slate-700 font-data-mono"><br></div>
+        </div>
+    </footer>
+</body>
+
+</html>
