@@ -15,6 +15,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
         rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -166,15 +168,15 @@
             <div class="relative z-10 max-w-7xl mx-auto px-margin w-full">
                 <div class="max-w-2xl space-y-stack-lg">
                     <div class="space-y-stack-md">
-                        <h1 class="font-display-lg text-display-lg text-inverse-surface">
+                        <h1 class="font-display-lg text-display-lg text-inverse-surface" data-aos="fade-right" data-aos-delay="200">
                             Sonido Premium, Confort y Seguridad para tu Vehículo
                         </h1>
-                        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl" data-aos="fade-up" data-aos-delay="400">
                             Integración avanzada de electrónica automotriz diseñada para la precisión y el rendimiento.
                             Transformamos la cabina en un entorno acústico perfecto.
                         </p>
                     </div>
-                    <a href="#servicios"
+                    <a href="#servicios" data-aos="fade-up" data-aos-delay="600"
                         class="font-label-caps max-w-[200px] text-label-caps bg-transparent border border-secondary text-inverse-surface px-8 py-4 hover:border-primary hover:text-primary transition-colors flex items-center gap-2 group">
                         VER SERVICIOS
                         <span
@@ -198,12 +200,12 @@
         <!-- Specializations (Bento Grid) -->
         <section id="servicios" class="py-24 bg-surface-dim min-h-screen flex items-center justify-center">
             <div class="max-w-7xl w-full mx-auto px-margin space-y-stack-lg">
-                <h2 class="font-headline-md text-headline-md text-inverse-surface border-l-4 border-primary pl-4">
+                <h2 class="font-headline-md text-headline-md text-inverse-surface border-l-4 border-primary pl-4" data-aos="fade-right">
                     Especialidades Técnicas
                 </h2>
                 <div class="grid place-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
                     <!-- Audio -->
-                    <div
+                    <div data-aos="fade-up"
                         class="bg-surface-container-low p-6 rounded-none tech-border transition-all duration-300 hover:bg-surface-container flex flex-col gap-stack-md h-full">
                         <div
                             class="h-12 w-12 rounded-full border border-outline/30 flex items-center justify-center text-primary bg-surface">
@@ -216,7 +218,7 @@
                         </p>
                     </div>
                     <!-- Multimedia -->
-                    <div
+                    <div data-aos="fade-up" data-aos-delay="100"
                         class="bg-surface-container-low p-6 rounded-none tech-border transition-all duration-300 hover:bg-surface-container flex flex-col gap-stack-md h-full">
                         <div
                             class="h-12 w-12 rounded-full border border-outline/30 flex items-center justify-center text-primary bg-surface">
@@ -229,7 +231,7 @@
                         </p>
                     </div>
                     <!-- Radar -->
-                    <div
+                    <div data-aos="fade-up" data-aos-delay="200"
                         class="bg-surface-container-low p-6 rounded-none tech-border transition-all duration-300 hover:bg-surface-container flex flex-col gap-stack-md h-full">
                         <div
                             class="h-12 w-12 rounded-full border border-outline/30 flex items-center justify-center text-primary bg-surface">
@@ -242,7 +244,7 @@
                         </p>
                     </div>
                     <!-- Security -->
-                    <div
+                    <div data-aos="fade-up" data-aos-delay="300"
                         class="bg-surface-container-low p-6 rounded-none tech-border transition-all duration-300 hover:bg-surface-container flex flex-col gap-stack-md h-full">
                         <div
                             class="h-12 w-12 rounded-full border border-outline/30 flex items-center justify-center text-primary bg-surface">
@@ -265,7 +267,7 @@
                 style="background-image: radial-gradient(#adc6ff 1px, transparent 1px); background-size: 32px 32px;">
             </div>
             <div class="max-w-7xl mx-auto px-margin relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div class="space-y-stack-lg">
+                <div class="space-y-stack-lg" data-aos="fade-right" data-aos-delay="200">
                     <div class="space-y-stack-sm">
                         <div class="font-data-mono text-data-mono text-outline uppercase tracking-widest">
                             Ubicación y Prestigio</div>
@@ -291,7 +293,7 @@
                     </div>
                 </div>
                 <!-- Map UI Element -->
-                <div class="glass-panel p-2 tech-border aspect-video lg:aspect-square">
+                <div class="glass-panel p-2 tech-border aspect-video lg:aspect-square" data-aos="fade-left" data-aos-delay="200">
                     <img alt="Mapa Murcia"
                         class="w-full h-full object-cover grayscale opacity-70 border border-surface-container-highest mix-blend-luminosity"
                         data-alt="Stylized dark mode satellite map view of a city grid with high contrast streets and subtle blue accent markers"
@@ -332,6 +334,12 @@
             <div class="text-xs text-slate-700 font-data-mono"><br></div>
         </div>
     </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true
+        });
+    </script>
 </body>
 
 </html>
